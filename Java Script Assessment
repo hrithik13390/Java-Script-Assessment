@@ -1,0 +1,46 @@
+// create a variable to hold your NFT's
+const NFTs =[]
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (_name,_sem,_section,_branch,_college) {
+   const NFT = {
+      "name" : _name,
+      "sem" : _sem,
+      "section" : _section,
+      "branch" :_branch,
+      "college" : _college,
+   }
+   NFTs.push(NFT);
+   console.log("Student: " +_name);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+   for(let i = 0; i < NFTs.length; i++ )
+      {
+         console.log("\nID:\t\t" +(i +1));
+         console.log("Name: \t\t" + NFTs[i].name);
+         console.log("Semester: \t" +NFTs[i].sem);
+         console.log("Section: \t" +NFTs[i].section);
+         console.log("Branch: \t" +NFTs[i].branch);
+         console.log("College: \t" +NFTs[i].college);
+      }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+   console.log("\n" + NFTs.length);
+}
+
+// call your functions below this line
+mintNFT("Hrithik" ,4 ,613, "CSE", "Chandigarh University");
+mintNFT("Saurav" ,4 ,617, "ESE", "Chandigarh University");
+mintNFT("Mihir" ,4 ,607, "ME", "Chandigarh University");
+mintNFT("Kunal" ,4 ,504 ,"CSE", "Chandigarh University");
+mintNFT("Vicky" ,4 ,756, "BCA", "Chandigarh University");
+mintNFT("Vishvaya" ,4 ,707, "MBA", "Chandigarh Group Of College");
+
+listNFTs();
+getTotalSupply();
